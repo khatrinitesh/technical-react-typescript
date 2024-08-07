@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
-import CustomApp from './Avoid-unnecessary-markup-divs/useeffect/1/app'
+import App from './extracting-type/1/App'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <>
-      <CustomApp/>
+      <App/>
   </>,
 )
