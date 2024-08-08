@@ -1,30 +1,46 @@
-import React, { createContext, useContext, useState } from 'react'
+import React from 'react'
+
+interface UserProfileProps{
+  name:string;
+  age:number;
+  email:string;
+}
+
+
+const data:UserProfileProps[] =  [
+  {name:'test1',age:34,email:'xyz@gmail.com'},
+  {name:'test2',age:34,email:'xyz@gmail.com'},
+  {name:'test3',age:34,email:'xyz@gmail.com'},
+  {name:'test4',age:34,email:'xyz@gmail.com'},
+]
+
 
 const App:React.FC = () => {
 
   return (
     <>
-    <SuccessAlert message="This is a successful message"/>
+       {data.map((user, index) => (
+        <UserProfile
+          key={index} // Use a unique key if possible
+          name={user.name}
+          age={user.age}
+          email={user.email}
+        />
+      ))}
     </>
   )
 }
 
 export default App
 
-interface SuccessMessage{
-    status:'success';
-    message:string;
+const UserProfile:React.FC<UserProfileProps> = ({name,age,email}) => {
+  return(
+    <>
+      <h1>Name: {name}</h1>
+      <p>Age: {age}</p>
+      <p>Email: {email}</p>
+    </>
+  )
 }
 
-interface ErrorMessage{
-    status:'error';
-    error:string;
-}
 
-type Message = SuccessMessage | ErrorMessage;
-
-type Extracted = Extract<Message,SuccessMessage>;
-
-const SuccessAlert:React.FC<Extracted> => ({message}) => {
-    return <div style={{color:'green'}}>{message}</div>
-}
