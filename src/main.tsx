@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './restspread/3/App'
+import ReactDOM from 'react-dom/client';
+import CustomApp from './tying-useref-hook/typing-ref-dom-elements/1/CustomApp';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <>
-      <App/>
+      <CustomApp/>
   </>,
 )
