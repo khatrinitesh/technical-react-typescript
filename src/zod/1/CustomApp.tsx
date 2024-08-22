@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 
-const CustomApp = () => {
+const CustomApp:React.FC = () => {
   return (
     <>
     asdad
